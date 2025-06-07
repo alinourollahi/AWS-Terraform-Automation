@@ -45,6 +45,11 @@ resource "aws_internet_gateway" "myapp-igw" {
 }
 
 
+resource "aws_route_table_association" "rtb-association-01" {
+    subnet_id = aws_subnet.myapp-subnet-01.id
+    route_table_id = aws_route_table.myapp-route-table.id
+}
+
 output subnet01_cidr_block {
   value = aws_subnet.myapp-subnet-01.cidr_block
 }
