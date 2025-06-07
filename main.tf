@@ -81,10 +81,3 @@ resource "aws_security_group" "myapp-sg" {
         Name: "${var.env_prefix}-sg"
     }
 }
-
-
-
-
-output subnet01_cidr_block {
-  value = aws_subnet.myapp-subnet-01.cidr_block
-}
