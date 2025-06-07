@@ -7,7 +7,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "environment" {
-    description = "deployment"
+    description = "environment variable"
 }
 
 resource "aws_vpc" "develop-vpc" {
