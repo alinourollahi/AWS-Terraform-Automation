@@ -2,14 +2,6 @@ provider "aws" {
     region = "us-east-1"
 }
 
-variable "vpc_cidr_block" {}
-variable "subnet_cidr_block" {}
-variable avail_zone {}
-variable env_prefix {}
-variable my-ip {}
-variable instance_type {}
-variable public_key_location {}
-
 resource "aws_vpc" "myapp-vpc" {
     cidr_block = var.vpc_cidr_block
     tags = {
@@ -124,6 +116,3 @@ resource "aws_key_pair" "ssh-key" {
     public_key = "${file(var.public_key_location)}"
 }
 
-output "myserver-public-ip" {
-    value = aws_instance.myapp-server.public_ip
-}
