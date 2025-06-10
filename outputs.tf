@@ -1,3 +1,3 @@
 output "myserver-public-ip" {
-    value = aws_instance.myapp-server.public_ip
+    value = module.myapp-ec2.instance.public_ip
 }
